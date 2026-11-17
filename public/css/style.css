@@ -1,0 +1,97 @@
+:root {
+    --navy: #0a1730;
+    --navy-light: #13274d;
+    --blue: #2563eb;
+    --lime: #b5f22c;
+    --text: #e6edf7;
+    --muted: #9fb0cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(160deg, var(--navy), #10306b);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+    padding: 16px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 3px solid var(--lime);
+}
+
+nav a { color: var(--text); text-decoration: none; font-weight: 600; }
+nav a:hover { color: var(--lime); }
+
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px; }
+
+h1 { color: var(--lime); }
+
+.card {
+    display: block;
+    padding: 20px 24px;
+    margin: 16px 0;
+    background: var(--navy-light);
+    border: 2px solid var(--blue);
+    border-radius: 14px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+a.card:hover { border-color: var(--lime); transform: translateY(-2px); }
+.card h2 { margin: 0 0 6px; }
+.card p { margin: 0; color: var(--muted); }
+
+.answer {
+    display: block;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.answer:has(input:checked) { border-color: var(--lime); background: rgba(181, 242, 44, 0.12); }
+.answer input { accent-color: var(--lime); }
+
+input[name="nick"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    background: var(--navy);
+    color: var(--text);
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--lime);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover { filter: brightness(1.1); }
+
+.error { color: #ff7a7a; }
+
+.message {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: var(--lime);
+    color: var(--navy);
+    font-weight: 700;
+}
+
+table { width: 100%; border-collapse: collapse; }
+td { padding: 8px; border-bottom: 1px solid var(--blue); }
+td:first-child { width: 40px; color: var(--muted); }
+td:last-child { text-align: right; color: var(--lime); font-weight: 700; }

@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => 'Wybierz quiz: wiedza ogólna albo samochody i F1')->name('home');
-Route::get('/quiz/{slug}', fn (string $slug) => "Quiz: $slug")
-    ->whereIn('slug', ['wiedza-ogolna', 'motoryzacja-f1'])
-    ->name('quiz.show');
+Route::get('/', [QuizController::class, 'index'])->name('home');
+Route::get('/ranking', [QuizController::class, 'ranking'])->name('ranking');
+
+Route::middleware('log.quiz')->group(function () {
+    Route::get('/quiz/{quiz:slug}', [QuizController::class, 'show'])->name('quiz.show');
+    Route::post('/quiz/{quiz:slug}', [QuizController::class, 'submit'])->name('quiz.submit');
+});
