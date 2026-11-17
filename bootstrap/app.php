@@ -11,6 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Rejestracja własnego middleware pod krótką nazwą używaną w routes/web.php
         $middleware->alias(['log.quiz' => \App\Http\Middleware\LogQuizAccess::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

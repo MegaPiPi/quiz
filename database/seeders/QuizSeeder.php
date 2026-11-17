@@ -9,6 +9,7 @@ class QuizSeeder extends Seeder
 {
     public function run(): void
     {
+        // Format pytania: [treść, [odpowiedzi], numer poprawnej liczony od 0]
         $data = [
             [
                 'quiz' => ['title' => 'Wiedza ogólna', 'slug' => 'wiedza-ogolna', 'description' => 'Sprawdź swoją wiedzę o świecie'],
@@ -27,6 +28,7 @@ class QuizSeeder extends Seeder
                     ['Jaka jest stolica Kanady?', ['Toronto', 'Vancouver', 'Ottawa'], 2],
                 ],
             ],
+            // Aby dodać pytanie: dopisz linijkę i uruchom php artisan migrate:fresh --seed
             [
                 'quiz' => ['title' => 'Samochody i F1', 'slug' => 'motoryzacja-f1', 'description' => 'Dla fanów motoryzacji i Formuły 1'],
                 'questions' => [
@@ -46,6 +48,7 @@ class QuizSeeder extends Seeder
             ],
         ];
 
+        // Zapis do bazy: quiz, potem jego pytania, potem odpowiedzi do każdego pytania
         foreach ($data as $item) {
             $quiz = Quiz::create($item['quiz']);
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // is_correct: 1 = poprawna odpowiedź, 0 = błędna
     public function up(): void
     {
         Schema::create('answers', function (Blueprint $table) {

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Komunikat z wynikiem przekazany z kontrolera po zapisaniu quizu --}}
     @if (session('message'))
         <p class="message">{{ session('message') }}</p>
     @endif

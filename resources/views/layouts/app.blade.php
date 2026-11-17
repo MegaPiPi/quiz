@@ -12,6 +12,7 @@
         <a href="{{ route('ranking') }}">Ranking</a>
     </nav>
     <main>
+        {{-- Tutaj wstawiana jest treść konkretnej strony --}}
         @yield('content')
     </main>
 </body>

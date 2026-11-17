@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // quiz_id łączy pytanie z quizem; usunięcie quizu usuwa jego pytania
     public function up(): void
     {
         Schema::create('questions', function (Blueprint $table) {

@@ -12,6 +12,7 @@ class QuizController extends Controller
         return view('quizzes.index', ['quizzes' => Quiz::all()]);
     }
 
+    // Laravel sam znajduje quiz po slugu z adresu i wczytuje pytania z odpowiedziami
     public function show(Quiz $quiz)
     {
         return view('quizzes.show', ['quiz' => $quiz->load('questions.answers')]);
@@ -21,6 +22,7 @@ class QuizController extends Controller
     {
         $questions = $quiz->questions()->with('answers')->get();
 
+        // Walidacja: nick 2-30 znaków i odpowiedź na każde pytanie
         $data = $request->validate([
             'nick' => 'required|string|min:2|max:30',
             'answers' => 'required|array|size:' . $questions->count(),
@@ -35,6 +37,7 @@ class QuizController extends Controller
             ->filter(fn ($question) => $question->answers->find($data['answers'][$question->id] ?? null)?->is_correct)
             ->count();
 
+        // Zapis nicku i wyniku do tabeli results (ranking)
         $quiz->results()->create(['nick' => $data['nick'], 'score' => $score, 'total' => $questions->count()]);
 
         return redirect()->route('ranking')

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+// Pytanie należy do quizu i ma kilka odpowiedzi
 class Question extends Model
 {
     protected $fillable = ['content'];

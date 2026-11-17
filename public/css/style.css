@@ -1,3 +1,4 @@
+/* Paleta kolorów strony - zmiana tutaj zmienia kolor wszędzie */
 :root {
     --navy: #0a1730;
     --navy-light: #13274d;
@@ -17,6 +18,7 @@ body {
     min-height: 100vh;
 }
 
+/* Górne menu z limonkową linią */
 nav {
     display: flex;
     gap: 24px;
@@ -33,6 +35,7 @@ main { max-width: 720px; margin: 0 auto; padding: 32px 16px; }
 
 h1 { color: var(--lime); }
 
+/* Karty: quizy na stronie głównej, pytania i tabele rankingu */
 .card {
     display: block;
     padding: 20px 24px;
@@ -48,6 +51,7 @@ a.card:hover { border-color: var(--lime); transform: translateY(-2px); }
 .card h2 { margin: 0 0 6px; }
 .card p { margin: 0; color: var(--muted); }
 
+/* Odpowiedź w formularzu; zaznaczona dostaje limonkową ramkę */
 .answer {
     display: block;
     padding: 10px 14px;
@@ -68,6 +72,7 @@ input[name="nick"] {
     color: var(--text);
 }
 
+/* Limonkowy przycisk "Sprawdź wynik" */
 button {
     padding: 12px 28px;
     font-size: 1rem;

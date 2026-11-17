@@ -11,6 +11,7 @@
         @foreach ($quiz->questions as $question)
             <div class="card">
                 <h2>{{ $loop->iteration }}. {{ $question->content }}</h2>
+                {{-- name="answers[id pytania]" - każde pytanie to osobna grupa przycisków radio --}}
                 @foreach ($question->answers as $answer)
                     <label class="answer">
                         <input type="radio" name="answers[{{ $question->id }}]" value="{{ $answer->id }}"

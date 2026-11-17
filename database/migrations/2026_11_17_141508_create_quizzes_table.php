@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // up() tworzy tabelę przy migrate, down() ją usuwa przy cofaniu migracji
     public function up(): void
     {
         Schema::create('quizzes', function (Blueprint $table) {

@@ -14,6 +14,7 @@ class Quiz extends Model
         return $this->hasMany(Question::class);
     }
 
+    // Wyniki od najlepszego; przy remisie wyżej jest ten, kto zagrał wcześniej
     public function results(): HasMany
     {
         return $this->hasMany(Result::class)->orderByDesc('score')->orderBy('created_at');

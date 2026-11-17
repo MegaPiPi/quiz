@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // Tabela rankingu: tu zapisuje się nick gracza i jego wynik
     public function up(): void
     {
         Schema::create('results', function (Blueprint $table) {
